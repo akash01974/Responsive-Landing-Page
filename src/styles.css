@@ -375,7 +375,7 @@
     /* Individual links with horizontal padding */
     .nav-links a {
       font-size: 0.85rem;
-      padding: 0.3rem 2.1rem; /* Added horizontal padding (0.8rem left/right) */
+      padding: 0.3rem 1.1rem; /* Added horizontal padding (0.8rem left/right) */
     }
   
     /* Adjust sizes for mobile */
