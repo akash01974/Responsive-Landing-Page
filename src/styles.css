@@ -1,0 +1,390 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  
+  /* Canvas Background */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, #111, #222);
+  }
+  
+  /* Navigation Bar */
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .nav-brand span {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding: 4px 0;
+  }
+  
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .nav-links a:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+  }
+  
+  .auth-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Unified Button Styles */
+  .signup-btn,
+  .card-btn,
+  .try-now-btn {
+    background: rgba(85, 85, 85, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .signup-btn:hover,
+  .card-btn:hover,
+  .try-now-btn:hover {
+    background: rgba(102, 102, 102, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Specific Button Adjustments */
+  .signup-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .try-now-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .try-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .try-now-btn:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+  
+  /* Main Container */
+  .container {
+    max-width: 1200px;
+    margin: 8rem auto 0;
+    padding: 2rem;
+  }
+  
+  /* Cards Section */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+  }
+  
+  .card {
+    background: #222;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card h3 {
+    color: #888;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  
+  .card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-btn {
+    background: #555;
+    color: #222;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .card-btn:hover {
+    background: #666;
+  }
+  
+  /* Universe Container */
+  #universe-container {
+    height: 600px;
+    margin-top: 5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .welcome-section h1 {
+    font-size: 3.2rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+  }
+  
+  .welcome-section h1 span {
+    color: #555;
+  }
+  
+  .welcome-section p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+      margin-top: 6rem;
+    }
+  
+    .main-nav {
+      padding: 0.8rem 5%;
+    }
+  
+    .nav-brand {
+      font-size: 1.3rem;
+    }
+  
+    .nav-links {
+      gap: 1.2rem;
+    }
+  
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+  
+    .signup-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .try-now-btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+/* Cards Section - Base Styles */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center; /* Center cards horizontally in their grid cells */
+    gap: 2.5rem;
+    padding: 2rem 0;
+  }
+  
+  /* 1024px Breakpoint - Larger centered cards */
+  @media (max-width: 1024px) {
+    .cards-container {
+      grid-template-columns: repeat(auto-fit, 350px);
+      justify-content: center; /* Center the entire grid */
+    }
+  }
+  
+  /* 768px Breakpoint - Medium centered cards */
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: repeat(auto-fit, 300px);
+      justify-content: center;
+    }
+  }
+  
+  /* 425px Breakpoint - Mobile single column */
+  @media (max-width: 425px) {
+    .cards-container {
+      grid-template-columns: minmax(280px, 1fr); /* Better mobile handling */
+      justify-items: center; /* Center single column */
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+    
+    .card {
+      width: 100%;
+      max-width: 300px; /* Constrain card width */
+    }
+    
+    /* Optional content scaling */
+    .card-icon { font-size: 2rem; }
+    .card h3 { font-size: 1.2rem; }
+    .card p { font-size: 0.85rem; }
+  }
+  @media (max-width: 1024px) {
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    
+    .card {
+      width: 400px; /* Default card width */
+    }
+    
+    .security-card {
+      width: 350px; /* Slightly wider */
+      margin: 0 auto; /* Center explicitly */
+    }
+  }
+  @media (max-width: 425px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 1.5rem;
+      padding: 1rem 1.5rem; /* Added horizontal padding */
+    }
+    
+    .card {
+      width: 100%;
+      max-width: 260px; /* Reduced card width */
+      padding: 1.5rem; /* Adjusted inner padding */
+    }
+    
+    /* Optional content scaling */
+    .card-icon { font-size: 1.8rem; }
+    .card h3 { font-size: 1.1rem; }
+    .card p { font-size: 0.8rem; }
+  }
+  
+  /* Mobile layout (425px and below) */
+@media (max-width: 425px) {
+    .main-nav {
+      flex-wrap: wrap; /* Allow items to wrap */
+      padding: 0.8rem;
+    }
+  
+    /* Top row - logo and signup button side by side */
+    .nav-brand {
+      flex: 1; /* Take available space */
+      text-align: left;
+    }
+  
+    .auth-section {
+      flex: 0 0 auto; /* Don't grow, don't shrink, auto basis */
+    }
+  
+    /* Bottom row - nav links with increased horizontal padding */
+    .nav-links {
+      order: 2; /* Move to bottom */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.8rem 1.5rem 0.5rem; /* Increased side padding from 0 to 1.5rem */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 0.8rem;
+    }
+  
+    /* Individual links with horizontal padding */
+    .nav-links a {
+      font-size: 0.85rem;
+      padding: 0.3rem 2.1rem; /* Added horizontal padding (0.8rem left/right) */
+    }
+  
+    /* Adjust sizes for mobile */
+    .nav-brand {
+      font-size: 1.3rem;
+    }
+  
+    .signup-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
